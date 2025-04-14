@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function numPerSide(){
     let squaresPerSide = prompt('Create a square grid with size length of?');
+    squaresPerSide = (squaresPerSide>100)? 100:squaresPerSide;
     createBox(squaresPerSide)
 }
 
@@ -17,6 +18,8 @@ function createBox(numPerSide = 16){
         row.classList.add('row')
         for (let i = 0; i<numPerSide; i++) {
             const newDiv = document.createElement('div')
+            newDiv.addEventListener('mouseover', ()=>newDiv.classList.add('coloron'));
+            newDiv.addEventListener('mouseout', ()=>newDiv.classList.remove('coloron'));
             row.appendChild(newDiv);
             newDiv.append(`${i+1}`)
             newDiv.classList.add('square')
@@ -33,4 +36,3 @@ function resetPage(){
     container.classList.add('container')
 
 }
-//make each square 5x5
