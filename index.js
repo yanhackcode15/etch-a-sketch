@@ -33,3 +33,4 @@ function resetPage(){
     container.classList.add('container')
 
 }
+//make each square 5x5
